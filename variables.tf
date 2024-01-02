@@ -7,7 +7,7 @@ variable "cluster_name" {
 variable "cluster_config_path" {
   description = "Path for kubeconfig."
   type        = string
-  default     = "./templates/kind-config-template.yaml"
+  default     = "~/.kube/configs/kind-terraform"
 }
 
 variable "container_port" {
@@ -26,4 +26,10 @@ variable "listen_address" {
   description = "IP address to listen on."
   type        = list(string)
   default     = []
+}
+
+variable "worker_node_name" {
+  description = "The name of the worker node"
+  type = string
+  default = "worker"
 }

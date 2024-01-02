@@ -21,18 +21,24 @@ resource "kind_cluster" "default" {
       ]
 
       extra_port_mappings {
-        container_port = var.container_port
-        host_port      = var.host_port
-        listen_address = var.listen_address
+        container_port = var.container_port[0]
+        host_port      = var.host_port[0]
+        listen_address = var.listen_address[0]
+      }
+
+      extra_port_mappings {
+        container_port = var.container_port[1]
+        host_port      = var.host_port[1]
+        listen_address = var.listen_address[0]
       }
     }
 
     node {
-      role = "worker"
+      role = var.worker_node_name
     }
 
     node {
-      role = "worker"
+      role = var.worker_node_name
     }
   }
 }
