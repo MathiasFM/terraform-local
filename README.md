@@ -1,2 +1,2 @@
 # terraform-local
-Learning how to use terraform locally to setup a cluster
+Learning how to use terraform locally to setup a cluster within Kind
